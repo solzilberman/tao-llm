@@ -30,13 +30,10 @@ def python_repl(what):
     # except Exception as e:
     #     return str(e)
 
-    # write what to tmp file, runs it and returns the output
     what = what.replace(';', '\n')
     with open('tmp.py', 'w') as f:
         f.write(what)
     
-    # run the file as subprocess and get the output
-
     f = open('tmp.out', 'w')
     result = subprocess.run(['python3', 'tmp.py'], stdout=f, stderr=f)
     f.close()
