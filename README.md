@@ -4,6 +4,7 @@ This is inspired by Langchain's `AgentExecutor` module. This is a toy demo to se
 
 # Demo
 Suprisingly decent results:
+
 ![image](https://user-images.githubusercontent.com/45021394/229602454-aa511544-c8db-49a0-a2b3-e7c46e20394a.png)
 
 
