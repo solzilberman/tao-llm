@@ -1,6 +1,6 @@
 # TAO LLM 
 Minimal implementation of thought-act-observe design pattern for LLMs.
-This is inspired by Langchain's `AgentExecutor` module. This is a toy demo to see how these design patters work. 
+This is inspired by Langchain's `AgentExecutor` module. This is a toy demo to see how these design patterns work. 
 
 # Demo
 Suprisingly decent results:
