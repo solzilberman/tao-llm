@@ -5,16 +5,15 @@ import os
 from dotenv import load_dotenv
 import sys
 from io import StringIO
-import json 
+import json
 import subprocess
 
+
 def wikipedia(q):
-    return httpx.get("https://en.wikipedia.org/w/api.php", params={
-        "action": "query",
-        "list": "search",
-        "srsearch": q,
-        "format": "json"
-    }).json()["query"]["search"][0]["snippet"]
+    return httpx.get(
+        "https://en.wikipedia.org/w/api.php",
+        params={"action": "query", "list": "search", "srsearch": q, "format": "json"},
+    ).json()["query"]["search"][0]["snippet"]
 
 
 def python_repl(what):
@@ -30,28 +29,29 @@ def python_repl(what):
     # except Exception as e:
     #     return str(e)
 
-    what = what.replace(';', '\n')
-    with open('tmp.py', 'w') as f:
+    what = what.replace(";", "\n")
+    with open("tmp.py", "w") as f:
         f.write(what)
-    
-    f = open('tmp.out', 'w')
-    result = subprocess.run(['python3', 'tmp.py'], stdout=f, stderr=f)
+
+    f = open("tmp.out", "w")
+    result = subprocess.run(["python3", "tmp.py"], stdout=f, stderr=f)
     f.close()
 
-    with open('tmp.out', 'r') as f:
+    with open("tmp.out", "r") as f:
         data = f.read()
 
-    os.system('rm tmp.py')
-    os.system('rm tmp.out')
+    os.system("rm tmp.py")
+    os.system("rm tmp.out")
     return data
 
+
 def terminal(what: str):
-    f = open('tmp.out', 'w')
+    f = open("tmp.out", "w")
     result = subprocess.run(what, shell=True, stdout=f, stderr=f)
     f.close()
 
-    with open('tmp.out', 'r') as f:
+    with open("tmp.out", "r") as f:
         data = f.read()
 
-    os.system('rm tmp.out')
+    os.system("rm tmp.out")
     return data

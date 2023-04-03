@@ -1,4 +1,3 @@
-    
 top_level = """
 You run in a thought-action-observe loop to accomplish a top-level purpose. Given a purpose, you will generate a thought. 
 Based on the thought, you will select an action from a list of available actions. 
